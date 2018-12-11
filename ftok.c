@@ -17,8 +17,7 @@ main(int argc, char **argv) {
   stat(argv[1], &st);
   printf( "st_dev: %lx, st_ino: %lx, key:%x\n", 
                   (u_long) st.st_dev, (u_long) st.st_ino,
-                  ftok(argv[1], 0x57) );
+                  ftok(argv[1], 0x57) ); // device file ID, inno number, ftok = proj_id(8) +dev id(12) + inno number(12)
 
   exit(0);
-
 }
